@@ -1,0 +1,58 @@
+::config(
+  export: {
+    type: commonmark,
+    path: "README.md"
+  }
+)
+::meta{
+  id: doc-readme,
+  lang: en
+}
+
+${macro.generated_by(self.path)}
+
+=[ Tsuzure Wiki ]
+
+Wiki application for the Tomet ecosystem.
+
+==[ Overview ]
+
+`tsuzure-wiki` provides a Wiki experience for Tomet workspaces.
+
+==[ Usage ]
+
+```bash
+tsuzure-wiki [path]              # open wiki for path (defaults to ".")
+```
+
+==[ Workspace Layout ]
+
+-| @dir(app) (`tsuzure-wiki`) -- Main CLI binary.
+
+==[ Building and Testing ]
+
+=== Build workspace
+
+```bash
+just build
+```
+
+=== Run tests
+
+```bash
+just test
+```
+
+=== Check code
+
+```bash
+just check
+just clippy
+```
+
+=== Documentation
+
+```bash
+just docs        # regenerate Markdown from tmtroot/
+just docs-check  # verify docs match exports
+```
