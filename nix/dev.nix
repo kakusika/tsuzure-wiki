@@ -2,9 +2,7 @@
   pkgs,
   mkShell,
   fenix,
-  tomet,
-  twrit,
-  catasto,
+  tools,
   ...
 }:
 let
@@ -21,9 +19,7 @@ let
 in
 mkShell {
   buildInputs = with pkgs; [
-    tomet
-    twrit
-    catasto
+    tools
     just
 
     #= Build

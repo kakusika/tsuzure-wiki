@@ -23,23 +23,8 @@
       url = "github:ipetkov/crane";
     };
 
-    #= Tools
-    tomet = {
-      url = "github:tomet-lang/tomet";
-      inputs.twrit.follows = "";
-      inputs.tomet-shelf.follows = "";
-      inputs.sisho.follows = "";
-    };
-    twrit = {
-      url = "github:tomet-lang/twrit";
-      inputs.tomet.follows = "";
-      inputs.tomet-shelf.follows = "";
-      inputs.sisho.follows = "";
-    };
-    catasto = {
-      url = "github:tomet-lang/fs-catasto";
-      inputs.sisho.follows = "";
-    };
+    #= Tool
+    sisho.url = "github:tomet-lang/sisho";
   };
 
   outputs = inputs: import ./nix inputs;

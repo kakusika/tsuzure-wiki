@@ -1,15 +1,13 @@
-::config(
-  export: {
-    type: commonmark,
-    path: "README.md"
-  }
+::export(
+  type: commonmark
+  path: "README.md"
 )
-::meta{
-  id: doc-readme,
+::id(doc-readme)
+::meta(
   lang: en
-}
+)
 
-${macro.generated_by(self.path)}
+$macro.generated_by(self::path)
 
 =[ Tsuzure Wiki ]
 
@@ -22,7 +20,7 @@ Wiki application for the Tomet ecosystem.
 ==[ Usage ]
 
 ```bash
-tsuzure-wiki [path]              # open wiki for path (defaults to ".")
+`` tsuzure-wiki [path]              # open wiki for path (defaults to ".")
 ```
 
 ==[ Workspace Layout ]
@@ -34,25 +32,25 @@ tsuzure-wiki [path]              # open wiki for path (defaults to ".")
 === Build workspace
 
 ```bash
-just build
+`` just build
 ```
 
 === Run tests
 
 ```bash
-just test
+`` just test
 ```
 
 === Check code
 
 ```bash
-just check
-just clippy
+`` just check
+`` just clippy
 ```
 
 === Documentation
 
 ```bash
-just docs        # regenerate Markdown from tmtroot/
-just docs-check  # verify docs match exports
+`` just docs        # regenerate Markdown from tmtroot/
+`` just docs-check  # verify docs match exports
 ```
