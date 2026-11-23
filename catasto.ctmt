@@ -2,25 +2,26 @@
 ::upstream(
   vocabularies: catasto.git("https://github.com/tomet-lang/vocabularies.git", rev: main, root: vocabularies)
   commonfiles:  catasto.git("https://github.com/tomet-lang/commonfiles.git", rev: main, root: base)
-  fs_catasto:   catasto.git("https://github.com/tomet-lang/fs-catasto.git", rev: "main", root: "tmtroot/schema/vocabularies")
+  fs_catasto:   catasto.git("https://github.com/tomet-lang/fs-catasto.git", rev: "main", root: "tmtroot/schema")
 )
 
 // --- Tomet ---
-"tmtroot/dev/agent/behavior.tmt":          catasto.upstream(commonfiles, path: "tmtroot/dev/agent/behavior.tmt")
-"tmtroot/dev/agent/commit-policy.tmt":     catasto.upstream(commonfiles, path: "tmtroot/dev/agent/commit-policy.tmt")
-"tmtroot/dev/agent/task.tmt":              catasto.upstream(commonfiles, path: "tmtroot/dev/agent/task.tmt")
-"tmtroot/dev/agent/writ.tmt":              catasto.upstream(commonfiles, path: "tmtroot/dev/agent/writ.tmt")
-"tmtroot/dev/convention/code-comment.tmt": catasto.upstream(commonfiles, path: "tmtroot/dev/convention/code-comment.tmt")
-"tmtroot/dev/convention/commit.tmt":       catasto.upstream(commonfiles, path: "tmtroot/dev/convention/commit.tmt")
-"tmtroot/dev/convention/document.tmt":     catasto.upstream(commonfiles, path: "tmtroot/dev/convention/document.tmt")
-"tmtroot/dev/convention/principles.tmt":   catasto.upstream(commonfiles, path: "tmtroot/dev/convention/principles.tmt")
-"tmtroot/dev/howto/jj.tmt":                catasto.upstream(commonfiles, path: "tmtroot/dev/howto/jj.tmt")
-"tmtroot/dev/howto/nix.tmt":               catasto.upstream(commonfiles, path: "tmtroot/dev/howto/nix.tmt")
+".tomet/dev/agent/behavior.tmt":          catasto.upstream(commonfiles, path: "tmtroot/dev/agent/behavior.tmt")
+".tomet/dev/agent/commit-policy.tmt":     catasto.upstream(commonfiles, path: "tmtroot/dev/agent/commit-policy.tmt")
+".tomet/dev/agent/task.tmt":              catasto.upstream(commonfiles, path: "tmtroot/dev/agent/task.tmt")
+".tomet/dev/agent/writ.tmt":              catasto.upstream(commonfiles, path: "tmtroot/dev/agent/writ.tmt")
+".tomet/dev/convention/code-comment.tmt": catasto.upstream(commonfiles, path: "tmtroot/dev/convention/code-comment.tmt")
+".tomet/dev/convention/commit.tmt":       catasto.upstream(commonfiles, path: "tmtroot/dev/convention/commit.tmt")
+".tomet/dev/convention/document.tmt":     catasto.upstream(commonfiles, path: "tmtroot/dev/convention/document.tmt")
+".tomet/dev/convention/principles.tmt":   catasto.upstream(commonfiles, path: "tmtroot/dev/convention/principles.tmt")
+".tomet/dev/howto/jj.tmt":                catasto.upstream(commonfiles, path: "tmtroot/dev/howto/jj.tmt")
+".tomet/dev/howto/nix.tmt":               catasto.upstream(commonfiles, path: "tmtroot/dev/howto/nix.tmt")
 
-// --- Vocabularies ---
-"tmtroot/schema/vocabularies/catasto@1.0.0.vocabulary.tmt": catasto.upstream(fs_catasto, path: "catasto@1.0.0.vocabulary.tmt")
-"tmtroot/schema/vocabularies/rust@1.0.0.vocabulary.tmt":    catasto.upstream(vocabularies, path: "rust/rust@1.0.0.vocabulary.tmt")
-"tmtroot/schema/vocabularies/writ@1.0.0.vocabulary.tmt":    catasto.upstream(vocabularies, path: "writ/writ@1.0.0.vocabulary.tmt")
+// --- Schema ---
+".tomet/schema/catasto@1.0.0.vocabulary.tmt": catasto.upstream(fs_catasto, path: "catasto@1.0.0.vocabulary.tmt")
+".tomet/schema/catasto@1.0.0.blueprint.ctmt": catasto.upstream(fs_catasto, path: "catasto@1.0.0.blueprint.ctmt")
+".tomet/schema/rust@1.0.0.vocabulary.tmt":    catasto.upstream(vocabularies, path: "rust/rust@1.0.0.vocabulary.tmt")
+".tomet/schema/writ@1.0.0.vocabulary.tmt":    catasto.upstream(vocabularies, path: "writ/writ@1.0.0.vocabulary.tmt")
 
 // --- Environment ---
 ".editorconfig":  catasto.upstream(commonfiles, path: ".editorconfig")
